@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,8 +31,15 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-KQ-AvP">
-                                <rect key="frame" x="184" y="802" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="20" y="786" width="374" height="46"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="nLS-9k-qjH"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="100" verticalHuggingPriority="100" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-id-be9" userLabel="RedView">
                                 <rect key="frame" x="120" y="74" width="174" height="174"/>
@@ -43,14 +50,15 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
+                            <constraint firstItem="Y5A-KQ-AvP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="59d-ip-4cq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y5A-KQ-AvP" secondAttribute="trailing" constant="20" id="8CY-Sc-ig5"/>
                             <constraint firstItem="ieD-Z4-OcT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EKg-Su-dFC"/>
                             <constraint firstItem="4bH-id-be9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HNP-QM-7VD"/>
                             <constraint firstItem="ieD-Z4-OcT" firstAttribute="top" secondItem="4bH-id-be9" secondAttribute="bottom" constant="30" id="KZj-O7-Z6B"/>
                             <constraint firstItem="4bH-id-be9" firstAttribute="leading" secondItem="ieD-Z4-OcT" secondAttribute="leading" id="Qtj-9s-X2C"/>
                             <constraint firstItem="baE-V1-EY9" firstAttribute="top" secondItem="ieD-Z4-OcT" secondAttribute="bottom" constant="30" id="RT6-WP-NJl"/>
-                            <constraint firstItem="Y5A-KQ-AvP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SkQ-v3-iex"/>
                             <constraint firstItem="Y5A-KQ-AvP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="baE-V1-EY9" secondAttribute="bottom" constant="30" id="gAf-CA-c8o"/>
                             <constraint firstItem="baE-V1-EY9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hnU-Vj-jh4"/>
                             <constraint firstItem="4bH-id-be9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="nos-iR-eba"/>
@@ -60,7 +68,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="greenView" destination="baE-V1-EY9" id="HkK-GU-ENy"/>
                         <outlet property="redView" destination="4bH-id-be9" id="llJ-HJ-zKb"/>
+                        <outlet property="startButton" destination="Y5A-KQ-AvP" id="dzf-Ac-hwL"/>
+                        <outlet property="yellowView" destination="ieD-Z4-OcT" id="W3x-9k-mU8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,8 +80,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
